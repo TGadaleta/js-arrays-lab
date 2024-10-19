@@ -104,3 +104,91 @@ Complete Exercise 8 in the space below:
 const soyIdx = foods.indexOf('tofu')
 
 console.log('Exercise 8 result:', soyIdx);
+
+/*
+Exercise 9: Joining elements
+
+1) Use the `join()` method to concatenate the strings in the `foods` array, 
+   separated by ' -> '. 
+
+2) Assign the result to a variable called `allFoods`. 
+
+Note: The final result should log as:
+'taco -> sushi -> cupcake -> tofu -> cheeseburger'
+
+Complete Exercise 9 in the space below:
+*/
+
+const allFoods = foods.join(' -> ') //join makes the elements in the array a string seperated by the delimiter ' -> '
+
+console.log('Exercise 9 result:', allFoods);
+
+/*
+Exercise 10: Check for an element
+
+1) Using the .includes() method, check if the `foods` array contains the string
+   'soup'.
+
+2) Assign the result to a variable called `hasSoup``.
+
+Complete Exercise 10 in the space below:
+*/
+
+const hasSoup = foods.includes('soup')
+
+console.log('Exercise 10 result:', hasSoup);
+
+/*
+Exercise 11: Odd numbers from an array
+
+1) Choose a method to iterate through the `nums` array.
+
+2) Push each odd number to a new array named `odds`.
+
+Hint: Initialize the `odds` variable to an empty array before the iteration.
+
+Complete Exercise 11 in the space below:
+*/
+
+const nums = [100, 5, 23, 15, 21, 72, 9, 45, 66, 7, 81, 90];
+
+const odds = [] //initilize empty array
+nums.forEach((el) => {if (el % 2 === 1) odds.push(el)}) //using the .forEach method, each element of the array nums is set to the variable el and then checked
+                                                        //if it is odd with the modulus operator, and if it is it is pushed to the new odd array
+
+console.log('Exercise 11 result:', odds);
+
+/*
+Exercise 12: FizzBuzz with arrays
+
+1) Choose a method to iterate through the `nums` array. 
+
+2. As you loop, sort the numbers into new arrays based on the following rules:
+
+   - Push any number evenly divisible by 3 to an array called `fizz`.
+   - Push any number evenly divisible by 5 to an array called `buzz`.
+   - Push any number that is evenly divisible by 3 and 5 to an array called
+     `fizzbuzz`.
+
+   Note: A single number may meet more than one of the above rules. If it does,
+         it should be placed in multiple arrays. For example, the number `15`
+         will appear in the `fizz`, `buzz`, and `fizzbuzz` arrays.
+
+Complete Exercise 12 in the space below:
+*/
+
+const fizz = []
+const buzz = []     //initializing our three arrays
+const fizzbuzz = []
+
+nums.forEach((el) => {  //using the forEach method
+    if(el % 3 === 0) fizz.push(el)  //checks if element is divisible by 3 and add it to fizz if it is
+    if(el % 5 === 0) buzz.push(el)  //checks if element is divisible by 5 and add it to buzz if it is
+    if(fizz.includes(el) && buzz.includes(el)) fizzbuzz.push(el)  //checks if element is in both the fizz and buzz array and add it to fizzbuzz if it is
+})
+
+console.log('Exercise 12 Results:');
+console.log('  fizz:', fizz);
+console.log('  buzz:', buzz);
+console.log('  fizzbuzz:', fizzbuzz);
+
